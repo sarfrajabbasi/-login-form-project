@@ -1,0 +1,243 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap");
+
+/* reset style */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* body style */
+body {
+  /* entire screen verically */
+  height: 100vh;
+  /* body as grid container */
+  display: grid;
+  /*  Centers the content of the body both horizontally and vertically within the grid container. */
+  place-items: center;
+
+  background-color: #f1f1f1;
+  font-weight: 300;
+  padding: 0 24px;
+}
+.container{
+    padding: 20px 0;
+}
+
+/* sign-up form style */
+
+.sign-up-form {
+  /* This property makes the .sign-up-form element a flex container, allowing its child elements to be arranged in a flexible layout. */
+  display: flex;
+
+  /* Specifies the direction of the flex container's main axis. In this case, it's set to column, which stacks the child elements vertically. */
+
+  flex-direction: column;
+  /* Sets the maximum width of the form container to 900 pixels, ensuring it doesn't become too wide on larger screens */
+
+  max-width: 900px;
+  /* Makes the form container occupy the full width of its parent element. */
+
+  width: 100%;
+  box-shadow: 0 10px 15px -3px, 0 4px 6px -4px;
+  /* Rounds the corners of the form container, giving it a softer appearance. */
+  border-radius: 12px;
+  background-color: #fff;
+
+  /* border-radius: 26px; */
+/* background: #e0e0e0;
+box-shadow:  18px 18px 41px #898989,
+             -18px -18px 41px #ffffff; */
+
+}
+
+/* form content style */
+
+
+.form-content{
+    /*  Makes the .form-content element a flex container, allowing its child elements to be arranged flexibly.
+ */
+    display: flex;
+    /*  Stacks the child elements vertically within the flex container. */
+    flex-direction: column;
+    /* Aligns the child elements along the cross-axis (vertically in this case), ensuring they are centered within the flex container. */
+    align-items: center;
+    padding: 32px;
+}
+
+/* hidden form img */
+
+.form-image{
+    display: none;
+}
+
+/* form heading style */
+
+.form-heading{
+    /* Centers the text within the container horizontally. */
+    text-align: center;
+    /* Adds a bottom margin of 32 pixels to create space between the form heading and the content below it. */
+    margin-bottom: 32px;
+}
+
+.form-heading img{
+    /* Sets the width of the image to 50 pixels */
+    width: 50px;
+    /* Allows the height of the image to adjust automatically while maintaining its aspect ratio.
+ */
+    height: auto;
+
+}
+
+/* style main heading */
+
+h1{
+    font-size: 24px;
+    font-weight: 500;
+}
+p{
+    font-size: 14px;
+}
+
+
+/* form fields  */
+
+.input-wrap{
+    /* Makes the container a flex container, allowing its child elements to be arranged flexibly. */
+    display: flex;
+    /* Stacks the child elements vertically within the container. */
+    flex-direction: column;
+    /* Adds a gap of 48 pixels between each child element, creating space between them. */
+    gap: 48px;
+    width: 100%;
+}
+
+.input{
+    display: flex;
+    flex-direction: column;
+    /*  Sets the position of the container relative to its normal position, allowing absolute positioning of its child elements. */
+    position: relative;
+}
+
+input{
+    width: 100%;
+    padding: 8px 0;
+    border: none;
+    border-bottom: 1px solid #181824;
+    /* Applies a transition effect over 300 milliseconds, creating a smooth change when the input fields are focused. */
+    transition: 300ms;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+/* input field focus */
+input:focus{
+    /* Removes the default focus outline, which is often a blue border. */
+    outline: none;
+    box-shadow: 0 1px 0 0 #6236ff;
+    border-color: #6236ff;
+}
+
+/* label styles */
+
+.label{
+    display: flex;
+    /* Positions the container absolutely within its parent, allowing it to be placed over the input fields. */
+    position: absolute;
+    /* Makes the height of the label container the same as its parent container. */
+    height: 100%;
+    /* Aligns the child elements of the label container vertically centered. */
+    align-items: center;
+    /* Applies a transition effect over 300 milliseconds with an easing function, creating a smooth change when the labels are moved.
+ */
+    transition: 300ms ease;
+
+}
+
+label{
+    display: block;
+    font-size:14px ;
+    color: #b0b0b0;
+}
+
+/* label Effect */
+
+/* targets the label container that immediately follows a focused input field.Targets the label container that immediately follows an input field with content (i.e., when the placeholder is not shown */
+input:focus + .label,
+input:not(:placeholder-shown) + .label {
+  transform: translateY(-27px);
+}
+
+/* Targets the label text within the label container that immediately follows an input field with content. */
+input:focus + .label label,
+input:not(:placeholder-shown)+ .label label
+{
+    font-weight: 500;
+    color: initial;
+}
+
+/* button style */
+
+button{
+    padding: 12px 18px;
+    border: none;
+    align-self: flex-start;
+    background-color: #6236ff;
+    color: #fff;
+    border-radius: 12px;
+    transition: 300ms;
+
+}
+
+button:hover{
+    cursor: pointer;
+    background-color: #f1f1f1;
+    color:#6236ff;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.5), 0 4px 6px -4px rgb(0 0 0 / 0.5);
+    border-radius: 20px;
+background: linear-gradient(145deg, #d1cfd7, #f8f6ff);
+box-shadow:  11px 11px 22px #c8c6ce,
+             -11px -11px 22px #ffffff;
+}
+
+/* media query */
+
+@media (min-width:900px) {
+      /* Styles applied when the viewport width is 900 pixels or wider */
+
+      /* Sign-up Form Desktop Layout : Adjusts the layout of the sign-up form container. */
+      .sign-up-form{
+        /*  Changes the direction of the flex container to row, allowing its child elements to be displayed horizontally. */
+        flex-direction: row;
+      }
+}
+
+
+/* Form Image / Branding:Styles the container for the form image.
+ */
+
+ .form-image{
+    display: block;
+    flex-basis: 45%;
+    background-image: url('.assets/bg-form.jpg');
+    border-radius: 12px 0 0 12px;
+ }
+
+ .form-image img {
+    width: 100%;
+    height: 100%;
+    /* Scales the image as large as possible to maintain its aspect ratio while filling the entire container. It might crop some parts of the image. */
+    object-fit: cover;
+    border-radius: 12px 0 0  12px;
+ }
+
+
+ h1{
+    font-size: 32px;
+    font-weight: 500;
+ }
+
+ p{
+    font-size: 16px;
+ }
